@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -15,6 +16,13 @@ public class Main {
 
     public void test() {
         Lock lock = new ReentrantLock();
+
+        Map<String, String> maptest = new HashMap<String, String>();
+
+        maptest.put("test", "test");
+
+
+        CountDownLatch doneSignal = new CountDownLatch(5);
 
         ReadWriteLock lock1 = new ReentrantReadWriteLock();
     }
